@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "439119220721",
+    "project_id": "doctor-app-527dc",
+    "storage_bucket": "doctor-app-527dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439119220721:android:5527eb9f970a0ec25dbe50",
+        "android_client_info": {
+          "package_name": "com.example.flutter_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439119220721-qmtftcndriobi0964phteorvs1385trt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_auth",
+            "certificate_hash": "e0840a1bd4420c806fddbc17b4e6227b40e436d1"
+          }
+        },
+        {
+          "client_id": "439119220721-9ilad2b7v9s5t3qda58vfuvcr5rei6gt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsH1xdsGdl2ByA9TUoUJxOrSoy6yKJkok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439119220721-9ilad2b7v9s5t3qda58vfuvcr5rei6gt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
