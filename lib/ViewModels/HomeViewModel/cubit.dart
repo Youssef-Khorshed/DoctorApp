@@ -327,9 +327,22 @@ class HomeCubit extends Cubit<HomeStates> {
     UserCredential value = await FirebaseData().signInWithFacebook();
     if (value != null) {
       userid = value.user.uid;
-      Preference.put(key: 'id', value: userid);
-      emit(SuccessLogin());
-      navigation(context: context, widget: HomeScreen());
+      final getuser = await FirebaseFirestore.instance
+          .collection('users')
+          .where('uId', isEqualTo: '${userid}')
+          .limit(1)
+          .get();
+      if (getuser.docs.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('User not Registered'),
+          duration: Duration(seconds: 1),
+        ));
+        emit(FaildLogin());
+      } else {
+        Preference.put(key: 'id', value: userid);
+        emit(SuccessLogin());
+        navigation(context: context, widget: HomeScreen());
+      }
     } else {
       emit(FaildLogin());
     }
@@ -339,11 +352,22 @@ class HomeCubit extends Cubit<HomeStates> {
     UserCredential value = await FirebaseData().signInWithGoogle();
     if (value != null) {
       userid = value.user.uid;
-      print('user id................................');
-      print(userid);
-      Preference.put(key: 'id', value: userid);
-      emit(SuccessLogin());
-      navigation(context: context, widget: HomeScreen());
+      final getuser = await FirebaseFirestore.instance
+          .collection('users')
+          .where('uId', isEqualTo: '${userid}')
+          .limit(1)
+          .get();
+      if (getuser.docs.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('User not Registered'),
+          duration: Duration(seconds: 1),
+        ));
+        emit(FaildLogin());
+      } else {
+        Preference.put(key: 'id', value: userid);
+        emit(SuccessLogin());
+        navigation(context: context, widget: HomeScreen());
+      }
     } else {
       emit(FaildLogin());
     }
